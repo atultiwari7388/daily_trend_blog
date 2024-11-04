@@ -2,6 +2,7 @@
 
 import { LoginButton } from "./LoginButton";
 import { SwitchTheme } from "./SwitchTheme";
+import AuthContextProvider from "./../../../lib/context/AuthContext";
 
 export const Header = () => {
   return (
@@ -29,8 +30,10 @@ export const Header = () => {
 
       {/* Right: Toggle Button and Login Button */}
       <div className="flex items-center gap-3">
-        <SwitchTheme />
-        <LoginButton />
+        <AuthContextProvider>
+          <SwitchTheme />
+          <LoginButton />
+        </AuthContextProvider>
       </div>
     </nav>
   );

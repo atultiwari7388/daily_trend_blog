@@ -1,10 +1,42 @@
 "use-client";
 
+import { useAuth } from "@/lib/context/AuthContext";
+
 export const LoginButton = () => {
+  const { user, isLoading, handleSigninWithGoogle, handleLogout } = useAuth();
+
+  if (isLoading) {
+    return <span className="loading loading-infinity loading-xs"></span>;
+  }
+
+  if (user) {
+    return (
+      <div>
+        <button
+          onClick={handleLogout}
+          className="btn btn-secondary btn-sm flex items-center gap-2"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            className="h-5 w-5"
+          >
+            <path
+              fill="currentColor"
+              d="M10 17L5 12l5-5v10zM20 12a8 8 0 1 0-8 8 8 8 0 0 0 8-8z"
+            />
+          </svg>
+          Logout
+        </button>
+        
+      </div>
+    );
+  }
+
   return (
     <section>
       <button
-        onClick={() => {}}
+        onClick={handleSigninWithGoogle}
         className="btn btn-secondary btn-sm flex items-center gap-2"
       >
         <svg
