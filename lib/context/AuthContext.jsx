@@ -1,4 +1,4 @@
-"use-client";
+"use client";
 
 import {
   GoogleAuthProvider,
@@ -8,7 +8,7 @@ import {
 } from "firebase/auth";
 import { doc, getDoc, setDoc } from "firebase/firestore"; // Import Firestore functions
 import { createContext, useContext, useEffect, useState } from "react";
-import { auth, db } from "./../firebase"; // Ensure db is your Firestore instance
+import { auth, db } from "../firebase";
 
 const AuthContext = createContext();
 

@@ -3,15 +3,17 @@
 import { LoginButton } from "./LoginButton";
 import { SwitchTheme } from "./SwitchTheme";
 import AuthContextProvider from "./../../../lib/context/AuthContext";
+import Link from "next/link";
 
 export const Header = () => {
   return (
     <nav className="flex justify-between items-center px-6 py-3 bg-base-100 border-b border-neutral">
       {/* Left: Logo */}
-      <div className="flex-shrink-0 text-xl font-bold text-primary">
-        TrendBlog
-      </div>
-
+      <Link href={`/`}>
+        <div className="flex-shrink-0 text-xl font-bold text-primary">
+          TrendBlog
+        </div>
+      </Link>
       {/* Center: Navigation Links */}
       <ul className="flex-grow flex justify-center gap-6 items-center text-base font-medium">
         <li className="hover:text-primary transition-colors cursor-pointer">
