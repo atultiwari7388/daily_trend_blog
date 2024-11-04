@@ -1,3 +1,5 @@
+import { Header } from "./components/Header/Header";
+
 export default function Home() {
-  return <h1>hello This is my Home</h1>;
+  return <main>Hello I am kalua</main>;
 }
