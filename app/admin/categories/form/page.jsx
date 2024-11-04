@@ -86,8 +86,13 @@ export default function Page() {
 
         {/* Submit Button */}
         <div className="pt-4">
-          <button type="submit" className="btn btn-primary w-full">
-            Submit
+          {error && <p className="text-red-600">{error}</p>}
+          <button
+            type="submit"
+            className="btn btn-primary w-full"
+            disabled={isLoading || isDone}
+          >
+            {isLoading ? "Creating..." : "Create"}
           </button>
         </div>
       </form>
